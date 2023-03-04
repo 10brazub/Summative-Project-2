@@ -7,7 +7,7 @@ import java.util.Objects;
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name="book")
-public class book {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -79,7 +79,7 @@ public class book {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        book book = (book) o;
+        Book book = (Book) o;
         return bookId == book.bookId && authorId == book.authorId && publisherId == book.publisherId && Double.compare(book.price, price) == 0 && Objects.equals(isbn, book.isbn) && Objects.equals(publishDate, book.publishDate) && Objects.equals(title, book.title);
     }
 
