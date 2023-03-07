@@ -1,4 +1,4 @@
 package com.company.bookstore.controllerTest;
 
-public class authorControllerTest {
+public class PublisherControllerTest {
 }

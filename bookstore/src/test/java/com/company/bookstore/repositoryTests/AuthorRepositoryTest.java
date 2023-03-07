@@ -1,4 +1,4 @@
 package com.company.bookstore.repositoryTests;
 
-public class authorRepositoryTest {
+public class AuthorRepositoryTest {
 }
