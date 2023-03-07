@@ -17,7 +17,9 @@ public class Book {
     private int authorId;
     private String title;
     private int publisherId;
-    private double price;
+    private String price;
+
+    public Book() {}
 
     public int getBookId() {
         return bookId;
@@ -67,11 +69,11 @@ public class Book {
         this.publisherId = publisherId;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -80,7 +82,7 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return bookId == book.bookId && authorId == book.authorId && publisherId == book.publisherId && Double.compare(book.price, price) == 0 && Objects.equals(isbn, book.isbn) && Objects.equals(publishDate, book.publishDate) && Objects.equals(title, book.title);
+        return bookId == book.bookId && authorId == book.authorId && publisherId == book.publisherId && Objects.equals(price, book.price) && Objects.equals(isbn, book.isbn) && Objects.equals(publishDate, book.publishDate) && Objects.equals(title, book.title);
     }
 
     @Override
