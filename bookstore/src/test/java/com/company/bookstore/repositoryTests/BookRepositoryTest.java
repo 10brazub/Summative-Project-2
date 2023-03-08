@@ -15,7 +15,7 @@ import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class bookRepositoryTest {
+public class BookRepositoryTest {
 
     @Autowired
     BookRepository bookRepository;
@@ -27,7 +27,6 @@ public class bookRepositoryTest {
 
     @Test
     public void shouldAddBook() {
-
         Book book = new Book();
         book.setIsbn("38309302");
         book.setPublishDate("03-23-2013");
