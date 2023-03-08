@@ -1,6 +1,5 @@
-package com.company.bookstore.controllerTest;
+package com.company.bookstore.controller;
 
-import com.company.bookstore.controller.BookController;
 import com.company.bookstore.model.Book;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;

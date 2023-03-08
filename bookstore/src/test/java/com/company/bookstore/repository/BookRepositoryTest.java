@@ -1,7 +1,6 @@
-package com.company.bookstore.repositoryTests;
+package com.company.bookstore.repository;
 
 import com.company.bookstore.model.Book;
-import com.company.bookstore.repository.BookRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
