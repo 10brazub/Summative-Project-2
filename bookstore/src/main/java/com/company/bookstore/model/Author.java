@@ -1,40 +1,37 @@
 package com.company.bookstore.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.io.Serializable;
+import java.util.*;
+
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Table(name="author")
-public class Author {
-
+@Table(name = "author")
+public class Author implements Serializable {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "author_id")
-    private int authorId;
-
-    @Column(name = "first_name")
+    private Integer authorId;
     private String firstName;
-
-    @Column(name = "last_name")
     private String lastName;
-
     private String street;
     private String city;
     private String state;
-
-    @Column(name = "postal_code")
     private String postalCode;
-
     private String phone;
     private String email;
+    @OneToMany(mappedBy = "authorId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Book> books = new HashSet<>();
 
-    public int getAuthorId() {
+
+    public Integer getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(int authorId) {
+    public void setAuthorId(Integer authorId) {
         this.authorId = authorId;
     }
 
@@ -107,11 +104,26 @@ public class Author {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return authorId == author.authorId && Objects.equals(firstName, author.firstName) && Objects.equals(lastName, author.lastName) && Objects.equals(street, author.street) && Objects.equals(city, author.city) && Objects.equals(state, author.state) && Objects.equals(postalCode, author.postalCode) && Objects.equals(phone, author.phone) && Objects.equals(email, author.email);
+        return Objects.equals(authorId, author.authorId) && Objects.equals(firstName, author.firstName) && Objects.equals(lastName, author.lastName) && Objects.equals(street, author.street) && Objects.equals(city, author.city) && Objects.equals(state, author.state) && Objects.equals(postalCode, author.postalCode) && Objects.equals(phone, author.phone) && Objects.equals(email, author.email);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(authorId, firstName, lastName, street, city, state, postalCode, phone, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorId=" + authorId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
