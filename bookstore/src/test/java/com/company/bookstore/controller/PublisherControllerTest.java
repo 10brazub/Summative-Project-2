@@ -42,24 +42,24 @@ public class PublisherControllerTest {
     public void shouldReturnNewPublisherOnPostRequest() throws Exception {
 
         Publisher inputPublisher = new Publisher();
-        inputPublisher.setName("Joe Smith LLC");
-        inputPublisher.setStreet("123 Sunset Blvd");
-        inputPublisher.setCity("Hollywood");
-        inputPublisher.setState("California");
-        inputPublisher.setPostalCode("01249");
-        inputPublisher.setPhone("6099549392");
-        inputPublisher.setEmail("joesmith@gmail.com");
+        inputPublisher.setName("Name");
+        inputPublisher.setStreet("street");
+        inputPublisher.setCity("City");
+        inputPublisher.setState("State");
+        inputPublisher.setPostalCode("00000");
+        inputPublisher.setPhone("000-000-0000");
+        inputPublisher.setEmail("email@email.com");
 
         String inputJson = mapper.writeValueAsString(inputPublisher);
 
         Publisher outputPublisher = new Publisher();
-        outputPublisher.setName("John Smith LLC");
-        outputPublisher.setStreet("123 Sunset Blvd");
-        outputPublisher.setCity("Hollywood");
-        outputPublisher.setState("California");
-        outputPublisher.setPostalCode("01249");
-        outputPublisher.setPhone("6099549392");
-        outputPublisher.setEmail("joesmith@gmail.com");
+        inputPublisher.setName("Name");
+        inputPublisher.setStreet("street");
+        inputPublisher.setCity("City");
+        inputPublisher.setState("State");
+        inputPublisher.setPostalCode("00000");
+        inputPublisher.setPhone("000-000-0000");
+        inputPublisher.setEmail("email@email.com");
 
         String outputJson = mapper.writeValueAsString(outputPublisher);
 
@@ -76,13 +76,13 @@ public class PublisherControllerTest {
     public void shouldUpdateByIdAndReturn204StatusCode() throws Exception {
 
         Publisher inputPublisher = new Publisher();
-        inputPublisher.setName("Joe Smith LLC");
-        inputPublisher.setStreet("123 Sunset Blvd");
-        inputPublisher.setCity("Hollywood");
-        inputPublisher.setState("California");
-        inputPublisher.setPostalCode("01249");
-        inputPublisher.setPhone("6099549392");
-        inputPublisher.setEmail("joesmith@gmail.com");
+        inputPublisher.setName("Name");
+        inputPublisher.setStreet("street");
+        inputPublisher.setCity("City");
+        inputPublisher.setState("State");
+        inputPublisher.setPostalCode("00000");
+        inputPublisher.setPhone("000-000-0000");
+        inputPublisher.setEmail("email@email.com");
         String inputJson = mapper.writeValueAsString(inputPublisher);
 
         mockMvc.perform(
@@ -106,13 +106,13 @@ public class PublisherControllerTest {
     @Test
     public void shouldReturnPublisherById() throws Exception {
         Publisher inputPublisher = new Publisher();
-        inputPublisher.setName("Joe Smith LLC");
-        inputPublisher.setStreet("123 Sunset Blvd");
-        inputPublisher.setCity("Hollywood");
-        inputPublisher.setState("California");
-        inputPublisher.setPostalCode("01249");
-        inputPublisher.setPhone("6099549392");
-        inputPublisher.setEmail("joesmith@gmail.com");
+        inputPublisher.setName("Name");
+        inputPublisher.setStreet("street");
+        inputPublisher.setCity("City");
+        inputPublisher.setState("State");
+        inputPublisher.setPostalCode("00000");
+        inputPublisher.setPhone("000-000-0000");
+        inputPublisher.setEmail("email@email.com");
         inputPublisher.setId(2);
 
         String outputJson = mapper.writeValueAsString(inputPublisher);
