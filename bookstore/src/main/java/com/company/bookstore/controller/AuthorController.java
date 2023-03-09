@@ -1,6 +1,8 @@
 package com.company.bookstore.controller;
 
+import com.company.bookstore.model.Author;
 import com.company.bookstore.model.Publisher;
+import com.company.bookstore.repository.AuthorRepository;
 import com.company.bookstore.repository.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,36 +14,27 @@ import java.util.Optional;
 public class AuthorController {
 
     @Autowired
-    PublisherRepository repo;
-
-    @PostMapping("/publisher")
+    AuthorRepository authorRepository;
+    @PostMapping(path = "/author")
     @ResponseStatus(HttpStatus.CREATED)
-    public Publisher addPublisher(@RequestBody Publisher Publisher) {
-        return repo.save(Publisher);
+    public Author createAuthor(@RequestBody Author author) {
+        return author = authorRepository.save(author);
     }
-
-    @PutMapping("/publisher")
+    @PutMapping(path = "/author")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updatePublisher(@RequestBody Publisher Publisher) {
-        repo.save(Publisher);
+    public Author updateAuthor(@RequestBody Author author) {
+        return author = authorRepository.save(author);
     }
 
-    @DeleteMapping("/publisher/{id}")
+    @DeleteMapping(path = "/author/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletePublisher(@PathVariable int id) { repo.deleteById(id); }
-
-    @GetMapping("/publisher/{id}")
-    public Publisher getPublisherById(@PathVariable int id) {
-        Optional<Publisher> returnVal = repo.findById(id);
-        if (returnVal.isPresent()) {
-            return returnVal.get();
-        } else {
-            return null;
-        }
+    public void deleteAuthor(@PathVariable Integer id) {
+        authorRepository.deleteById(id);
+    }
+    @GetMapping("/author")
+    public List<Author> readAllBook() {
+        List<Author> authorList = authorRepository.findAll();
+        return authorList;
     }
 
-    @GetMapping("/publisher")
-    public List<Publisher> getAllPublishers() {
-        return repo.findAll();
-    }
 }
