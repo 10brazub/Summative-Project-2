@@ -12,39 +12,37 @@ import java.util.Optional;
 public class PublisherController {
 
     @Autowired
-    PublisherRepository publisherRepository;
+    PublisherRepository repo;
 
     @PostMapping("/publisher")
-    @ResponseStatus(value = HttpStatus.CREATED)
-    public Publisher addPublisher(@RequestBody Publisher publisher) {
-        return publisherRepository.save(publisher);
-    }
-
-    @GetMapping("/publisher/{id}")
-    public Publisher addPublisherById(@PathVariable int id) {
-        Optional<Publisher> returnVal = publisherRepository.findById(id);
-
-        return returnVal.orElse(null);
-    }
-
-    @GetMapping("/publisher")
-    public List<Publisher> getAllPublisher() {
-
-        return publisherRepository.findAll();
+    @ResponseStatus(HttpStatus.CREATED)
+    public Publisher addPublisher(@RequestBody Publisher Publisher) {
+        return repo.save(Publisher);
     }
 
     @PutMapping("/publisher")
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void updatePublisher(@RequestBody Publisher publisher) {
-
-        publisherRepository.save(publisher);
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updatePublisher(@RequestBody Publisher Publisher) {
+        repo.save(Publisher);
     }
 
-    @DeleteMapping("/publisher")
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void deletePublisher(@RequestBody Publisher publisher) {
+    @DeleteMapping("/publisher/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletePublisher(@PathVariable int id) { repo.deleteById(id); }
 
-        publisherRepository.delete(publisher);
+    @GetMapping("/publisher/{id}")
+    public Publisher getPublisherById(@PathVariable int id) {
+        Optional<Publisher> returnVal = repo.findById(id);
+        if (returnVal.isPresent()) {
+            return returnVal.get();
+        } else {
+            return null;
+        }
+    }
+
+    @GetMapping("/publisher")
+    public List<Publisher> getAllPublishers() {
+        return repo.findAll();
     }
 
 }
