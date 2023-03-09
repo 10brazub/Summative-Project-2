@@ -35,4 +35,10 @@ public class AuthorController {
         return authorList;
     }
 
+    @GetMapping("/author/{id}")
+    public Author addAuthorById(@PathVariable int id) {
+        Optional<Author> returnVal = authorRepository.findById(id);
+        return returnVal.orElse(null);
+    }
+
 }
