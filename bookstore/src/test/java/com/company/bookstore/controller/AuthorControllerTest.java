@@ -46,8 +46,13 @@ public class AuthorControllerTest {
         author.setState("St");
         author.setCity("City");
         author.setAuthorId(2);
-        String outputJson = mapper.writeValueAsString(author);
-        mockMvc.perform(get("/author/2"))
+
+        String inputJson = mapper.writeValueAsString(author);
+
+        mockMvc.perform(
+                    get("/author/2")
+                            .content(inputJson)
+                            .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
