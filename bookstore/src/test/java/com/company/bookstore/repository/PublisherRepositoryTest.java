@@ -27,13 +27,13 @@ public class PublisherRepositoryTest {
     public void shouldCreateNewPublisher() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Joe Smith LLC");
-        publisher.setStreet("123 Sunset Blvd");
-        publisher.setCity("Hollywood");
-        publisher.setState("California");
-        publisher.setPostalCode("01249");
-        publisher.setPhone("6099549392");
-        publisher.setEmail("joesmith@gmail.com");
+        publisher.setName("Publisher Name");
+        publisher.setStreet("Street");
+        publisher.setCity("City");
+        publisher.setState("State");
+        publisher.setPostalCode("00000");
+        publisher.setPhone("000-000-0000");
+        publisher.setEmail("email@email.com");
 
         publisher = publisherRepo.save(publisher);
 
@@ -45,15 +45,15 @@ public class PublisherRepositoryTest {
     public void shouldUpdatePublisher() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Joe Smith LLC");
-        publisher.setStreet("123 Sunset Blvd");
-        publisher.setCity("Hollywood");
-        publisher.setState("California");
-        publisher.setPostalCode("01249");
-        publisher.setPhone("6099549392");
-        publisher.setEmail("joesmith@gmail.com");
+        publisher.setName("Publisher Name");
+        publisher.setStreet("Street");
+        publisher.setCity("City");
+        publisher.setState("State");
+        publisher.setPostalCode("00000");
+        publisher.setPhone("000-000-0000");
+        publisher.setEmail("email@email.com");
 
-        publisher.setName("UPDATED");
+        publisher.setName("Updated Name");
         publisher = publisherRepo.save(publisher);
 
         Optional<Publisher> publisher1 = publisherRepo.findById(publisher.getId());
@@ -64,13 +64,13 @@ public class PublisherRepositoryTest {
     public void shouldDeletePublisher() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Joe Smith LLC");
-        publisher.setStreet("123 Sunset Blvd");
-        publisher.setCity("Hollywood");
-        publisher.setState("California");
-        publisher.setPostalCode("01249");
-        publisher.setPhone("6099549392");
-        publisher.setEmail("joesmith@gmail.com");
+        publisher.setName("Publisher Name");
+        publisher.setStreet("Street");
+        publisher.setCity("City");
+        publisher.setState("State");
+        publisher.setPostalCode("00000");
+        publisher.setPhone("000-000-0000");
+        publisher.setEmail("email@email.com");
         publisherRepo.save(publisher);
 
 
@@ -85,13 +85,13 @@ public class PublisherRepositoryTest {
     public void shouldGetPublisherByID() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Joe Smith LLC");
-        publisher.setStreet("123 Sunset Blvd");
-        publisher.setCity("Hollywood");
-        publisher.setState("California");
-        publisher.setPostalCode("01249");
-        publisher.setPhone("6099549392");
-        publisher.setEmail("joesmith@gmail.com");
+        publisher.setName("Publisher Name");
+        publisher.setStreet("Street");
+        publisher.setCity("City");
+        publisher.setState("State");
+        publisher.setPostalCode("00000");
+        publisher.setPhone("000-000-0000");
+        publisher.setEmail("email@email.com");
         publisher = publisherRepo.save(publisher);
 
         Optional<Publisher> foundPublisher = publisherRepo.findById(publisher.getId());
@@ -104,23 +104,23 @@ public class PublisherRepositoryTest {
     public void shouldGetAllPublishers() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Joe Smith LLC");
-        publisher.setStreet("123 Sunset Blvd");
-        publisher.setCity("Hollywood");
-        publisher.setState("California");
-        publisher.setPostalCode("01249");
-        publisher.setPhone("6099549392");
-        publisher.setEmail("joesmith@gmail.com");
+        publisher.setName("Publisher Name");
+        publisher.setStreet("Street");
+        publisher.setCity("City");
+        publisher.setState("State");
+        publisher.setPostalCode("00000");
+        publisher.setPhone("000-000-0000");
+        publisher.setEmail("email@email.com");
         publisherRepo.save(publisher);
 
         Publisher publisher1 = new Publisher();
-        publisher.setName("John Smith LLC");
-        publisher.setStreet("123 Sunset Blvd");
-        publisher.setCity("Hollywood");
-        publisher.setState("California");
-        publisher.setPostalCode("01249");
-        publisher.setPhone("6099549392");
-        publisher.setEmail("joesmith@gmail.com");
+        publisher.setName("Publisher Name");
+        publisher.setStreet("Street");
+        publisher.setCity("City");
+        publisher.setState("State");
+        publisher.setPostalCode("00000");
+        publisher.setPhone("000-000-0000");
+        publisher.setEmail("email@email.com");
         publisherRepo.save(publisher1);
 
         List<Publisher> publisherList = publisherRepo.findAll();
