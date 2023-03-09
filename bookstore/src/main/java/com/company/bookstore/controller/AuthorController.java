@@ -1,9 +1,7 @@
 package com.company.bookstore.controller;
 
 import com.company.bookstore.model.Author;
-import com.company.bookstore.model.Publisher;
 import com.company.bookstore.repository.AuthorRepository;
-import com.company.bookstore.repository.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
