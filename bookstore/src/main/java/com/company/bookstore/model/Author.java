@@ -35,6 +35,9 @@ public class Author implements Serializable {
         this.authorId = authorId;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -65,6 +68,38 @@ public class Author implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
     }
 
     @Override

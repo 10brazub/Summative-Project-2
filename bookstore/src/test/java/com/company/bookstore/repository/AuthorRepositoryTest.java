@@ -116,4 +116,31 @@ public class AuthorRepositoryTest {
         assertFalse(author1.isPresent());
     }
 
+    @Test
+    public void testReadAuthorById() {
+
+        Author author = new Author();
+        author.setEmail("test@email.com");
+        author.setPhone("111-222-3333");
+        author.setFirstName("Test");
+        author.setLastName("Author");
+        author.setStreet("123 Main St");
+        author.setPostalCode("12345");
+        author.setState("CA");
+        author.setCity("Test City");
+        authorRepository.save(author);
+
+        Optional<Author> optionalAuthor = authorRepository.findById(author.getAuthorId());
+
+        assertTrue(optionalAuthor.isPresent());
+        assertEquals(author.getAuthorId(), optionalAuthor.get().getAuthorId());
+        assertEquals(author.getEmail(), optionalAuthor.get().getEmail());
+        assertEquals(author.getPhone(), optionalAuthor.get().getPhone());
+        assertEquals(author.getFirstName(), optionalAuthor.get().getFirstName());
+        assertEquals(author.getLastName(), optionalAuthor.get().getLastName());
+        assertEquals(author.getStreet(), optionalAuthor.get().getStreet());
+        assertEquals(author.getPostalCode(), optionalAuthor.get().getPostalCode());
+        assertEquals(author.getState(), optionalAuthor.get().getState());
+        assertEquals(author.getCity(), optionalAuthor.get().getCity());
+    }
 }
