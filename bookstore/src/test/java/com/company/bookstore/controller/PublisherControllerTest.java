@@ -31,16 +31,16 @@ public class PublisherControllerTest {
     @MockBean
     private PublisherRepository PublisherRepository;
 
-
+    // Create an instance of the Jackson ObjectMapper
     private ObjectMapper mapper = new ObjectMapper();
 
-
+    // Define an empty list to hold publisher objects
     private List<Publisher> publisherList;
 
-
     @Test
-    public void shouldReturnNewPublisherOnPostRequest() throws Exception {
+    public void shouldReturnNewPublisher() throws Exception {
 
+        // Create a new instance of the Publisher class and set its properties
         Publisher inputPublisher = new Publisher();
         inputPublisher.setName("Name");
         inputPublisher.setStreet("street");
@@ -50,31 +50,38 @@ public class PublisherControllerTest {
         inputPublisher.setPhone("000-000-0000");
         inputPublisher.setEmail("email@email.com");
 
+        // Serialize the Publisher object to JSON format
         String inputJson = mapper.writeValueAsString(inputPublisher);
 
+        // Define the expected output Publisher object
         Publisher outputPublisher = new Publisher();
-        inputPublisher.setName("Name");
-        inputPublisher.setStreet("street");
-        inputPublisher.setCity("City");
-        inputPublisher.setState("State");
-        inputPublisher.setPostalCode("00000");
-        inputPublisher.setPhone("000-000-0000");
-        inputPublisher.setEmail("email@email.com");
+        outputPublisher.setName("Name");
+        outputPublisher.setStreet("street");
+        outputPublisher.setCity("City");
+        outputPublisher.setState("State");
+        outputPublisher.setPostalCode("00000");
+        outputPublisher.setPhone("000-000-0000");
+        outputPublisher.setEmail("email@email.com");
 
+        // Serialize the expected output Publisher object to JSON format
         String outputJson = mapper.writeValueAsString(outputPublisher);
 
+        // Perform a POST request to the "/publisher" endpoint with the serialized input JSON
         mockMvc.perform(
-                        post("/publisher")                            // Perform the POST request
-                                .content(inputJson)                       // Set the request body
-                                .contentType(MediaType.APPLICATION_JSON)  // Tell the server it's in JSON format
+                        post("/publisher")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
                 )
-                .andDo(print())                                // Print results to console
-                .andExpect(status().isCreated());              // ASSERT (status code is 201)
+                // Print the results to the console
+                .andDo(print())
+                // Assert that the status code of the response is 201 (created)
+                .andExpect(status().isCreated());
     }
 
     @Test
-    public void shouldUpdateByIdAndReturn204StatusCode() throws Exception {
+    public void shouldUpdateById() throws Exception {
 
+        // Create a new instance of the Publisher class and set its properties
         Publisher inputPublisher = new Publisher();
         inputPublisher.setName("Name");
         inputPublisher.setStreet("street");
@@ -83,28 +90,37 @@ public class PublisherControllerTest {
         inputPublisher.setPostalCode("00000");
         inputPublisher.setPhone("000-000-0000");
         inputPublisher.setEmail("email@email.com");
+
+        // Serialize the Publisher object to JSON format
         String inputJson = mapper.writeValueAsString(inputPublisher);
 
+        // Perform a PUT request to the "/publisher" endpoint with the serialized input JSON
         mockMvc.perform(
                         put("/publisher")
                                 .content(inputJson)
                                 .contentType(MediaType.APPLICATION_JSON)
                 )
+                // Print the results to the console
                 .andDo(print())
+                // Assert that the status code of the response is 204 (no content)
                 .andExpect(status().isNoContent());
     }
 
     @Test
-    public void shouldDeleteByIdAndReturn204StatusCode() throws Exception {
+    public void shouldDeleteById() throws Exception {
 
+        // Perform a DELETE request to the "/publisher/5" endpoint
         mockMvc.perform(delete("/publisher/5"))
+                // Print the results to the console
                 .andDo(print())
+                // Assert that the status code of the response is 204 (no content)
                 .andExpect(status().isNoContent());
     }
 
 
     @Test
     public void shouldReturnPublisherById() throws Exception {
+        // Create a new instance of the Publisher class and set its properties
         Publisher inputPublisher = new Publisher();
         inputPublisher.setName("Name");
         inputPublisher.setStreet("street");
@@ -115,20 +131,23 @@ public class PublisherControllerTest {
         inputPublisher.setEmail("email@email.com");
         inputPublisher.setId(2);
 
+        // Convert the Publisher object to a JSON string
         String outputJson = mapper.writeValueAsString(inputPublisher);
 
+        // Make a GET request to the endpoint with the ID of the Publisher we created
         mockMvc.perform(get("/publisher/2"))
-                .andDo(print())
-                .andExpect(status().isOk());
+                .andDo(print()) // Print results to console
+                .andExpect(status().isOk()); // ASSERT (status code is 200)
     }
 
     @Test
     public void shouldReturnAllPublishers() throws Exception {
-
+        // Convert the publisherList object to a JSON string
         String outputJson = mapper.writeValueAsString(publisherList);
 
+        // Make a GET request to the endpoint to get all publishers
         mockMvc.perform(get("/publisher"))
-                .andDo(print())
-                .andExpect(status().isOk());
+                .andDo(print()) // Print results to console
+                .andExpect(status().isOk()); // ASSERT (status code is 200)
     }
 }
