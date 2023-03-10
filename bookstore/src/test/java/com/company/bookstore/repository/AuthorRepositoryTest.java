@@ -44,7 +44,6 @@ public class AuthorRepositoryTest {
 
     @Test
     public void testReadAllAuthor() {
-        // Arrange...
         Author author = new Author();
         author.setEmail("email@email.com");
         author.setPhone("111-222-3333");
