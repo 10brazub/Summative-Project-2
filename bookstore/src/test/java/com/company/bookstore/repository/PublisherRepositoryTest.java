@@ -27,13 +27,13 @@ public class PublisherRepositoryTest {
     public void shouldCreateNewPublisher() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Publisher Name");
-        publisher.setStreet("Street");
-        publisher.setCity("City");
-        publisher.setState("State");
-        publisher.setPostalCode("00000");
-        publisher.setPhone("000-000-0000");
-        publisher.setEmail("email@email.com");
+        publisher.setName("Penguin Random House");
+        publisher.setStreet("1745 Broadway");
+        publisher.setCity("New York City");
+        publisher.setState("New York");
+        publisher.setPostalCode("10019");
+        publisher.setPhone("800-793-2665");
+        publisher.setEmail("penguinrandomhouse@gmail.com");
 
         publisher = publisherRepo.save(publisher);
 
@@ -45,15 +45,15 @@ public class PublisherRepositoryTest {
     public void shouldUpdatePublisher() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Publisher Name");
-        publisher.setStreet("Street");
-        publisher.setCity("City");
-        publisher.setState("State");
-        publisher.setPostalCode("00000");
-        publisher.setPhone("000-000-0000");
-        publisher.setEmail("email@email.com");
+        publisher.setName("Penguin Random House");
+        publisher.setStreet("1745 Broadway");
+        publisher.setCity("New York City");
+        publisher.setState("New York");
+        publisher.setPostalCode("10019");
+        publisher.setPhone("800-793-2665");
+        publisher.setEmail("penguinrandomhouse@gmail.com");
 
-        publisher.setName("Updated Name");
+        publisher.setName("Penguin || Random House");
         publisher = publisherRepo.save(publisher);
 
         Optional<Publisher> publisher1 = publisherRepo.findById(publisher.getId());
@@ -64,13 +64,13 @@ public class PublisherRepositoryTest {
     public void shouldDeletePublisher() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Publisher Name");
-        publisher.setStreet("Street");
-        publisher.setCity("City");
-        publisher.setState("State");
-        publisher.setPostalCode("00000");
-        publisher.setPhone("000-000-0000");
-        publisher.setEmail("email@email.com");
+        publisher.setName("Penguin Random House");
+        publisher.setStreet("1745 Broadway");
+        publisher.setCity("New York City");
+        publisher.setState("New York");
+        publisher.setPostalCode("10019");
+        publisher.setPhone("800-793-2665");
+        publisher.setEmail("penguinrandomhouse@gmail.com");
         publisherRepo.save(publisher);
 
 
@@ -85,13 +85,13 @@ public class PublisherRepositoryTest {
     public void shouldGetPublisherByID() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Publisher Name");
-        publisher.setStreet("Street");
-        publisher.setCity("City");
-        publisher.setState("State");
-        publisher.setPostalCode("00000");
-        publisher.setPhone("000-000-0000");
-        publisher.setEmail("email@email.com");
+        publisher.setName("Penguin Random House");
+        publisher.setStreet("1745 Broadway");
+        publisher.setCity("New York City");
+        publisher.setState("New York");
+        publisher.setPostalCode("10019");
+        publisher.setPhone("800-793-2665");
+        publisher.setEmail("penguinrandomhouse@gmail.com");
         publisher = publisherRepo.save(publisher);
 
         Optional<Publisher> foundPublisher = publisherRepo.findById(publisher.getId());
@@ -104,23 +104,23 @@ public class PublisherRepositoryTest {
     public void shouldGetAllPublishers() {
 
         Publisher publisher = new Publisher();
-        publisher.setName("Publisher Name");
-        publisher.setStreet("Street");
-        publisher.setCity("City");
-        publisher.setState("State");
-        publisher.setPostalCode("00000");
-        publisher.setPhone("000-000-0000");
-        publisher.setEmail("email@email.com");
+        publisher.setName("Penguin Random House");
+        publisher.setStreet("1745 Broadway");
+        publisher.setCity("New York City");
+        publisher.setState("New York");
+        publisher.setPostalCode("10019");
+        publisher.setPhone("800-793-2665");
+        publisher.setEmail("penguinrandomhouse@gmail.com");
         publisherRepo.save(publisher);
 
         Publisher publisher1 = new Publisher();
-        publisher.setName("Publisher Name");
-        publisher.setStreet("Street");
-        publisher.setCity("City");
-        publisher.setState("State");
-        publisher.setPostalCode("00000");
-        publisher.setPhone("000-000-0000");
-        publisher.setEmail("email@email.com");
+        publisher1.setName("J.K. Rowling Publishing");
+        publisher1.setStreet("232 Maple St");
+        publisher1.setCity("New York City");
+        publisher1.setState("New York");
+        publisher1.setPostalCode("92422");
+        publisher1.setPhone("859-429-3920");
+        publisher1.setEmail("jkRowling@gmail.com");
         publisherRepo.save(publisher1);
 
         List<Publisher> publisherList = publisherRepo.findAll();

@@ -39,10 +39,11 @@ public class BookController {
         bookRepository.save(book);
     }
 
-    @DeleteMapping("/book")
+    @DeleteMapping("/book/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void deleteBook(@RequestBody Book book) {
-        bookRepository.delete(book);
+    public void deleteBook(@PathVariable int id) {
+
+        bookRepository.deleteById(id);
     }
 
     @GetMapping("/book/author/{id}")

@@ -42,26 +42,26 @@ public class PublisherControllerTest {
 
         // Create a new instance of the Publisher class and set its properties
         Publisher inputPublisher = new Publisher();
-        inputPublisher.setName("Name");
-        inputPublisher.setStreet("street");
-        inputPublisher.setCity("City");
-        inputPublisher.setState("State");
-        inputPublisher.setPostalCode("00000");
-        inputPublisher.setPhone("000-000-0000");
-        inputPublisher.setEmail("email@email.com");
+        inputPublisher.setName("Penguin Random House");
+        inputPublisher.setStreet("1745 Broadway");
+        inputPublisher.setCity("New York City");
+        inputPublisher.setState("New York");
+        inputPublisher.setPostalCode("10019");
+        inputPublisher.setPhone("800-793-2665");
+        inputPublisher.setEmail("penguinrandomhouse@gmail.com");
 
         // Serialize the Publisher object to JSON format
         String inputJson = mapper.writeValueAsString(inputPublisher);
 
         // Define the expected output Publisher object
         Publisher outputPublisher = new Publisher();
-        outputPublisher.setName("Name");
-        outputPublisher.setStreet("street");
-        outputPublisher.setCity("City");
-        outputPublisher.setState("State");
-        outputPublisher.setPostalCode("00000");
-        outputPublisher.setPhone("000-000-0000");
-        outputPublisher.setEmail("email@email.com");
+        outputPublisher.setName("Penguin Random House");
+        outputPublisher.setStreet("1745 Broadway");
+        outputPublisher.setCity("New York City");
+        outputPublisher.setState("New York");
+        outputPublisher.setPostalCode("10019");
+        outputPublisher.setPhone("800-793-2665");
+        outputPublisher.setEmail("penguinrandomhouse@gmail.com");
 
         // Serialize the expected output Publisher object to JSON format
         String outputJson = mapper.writeValueAsString(outputPublisher);
@@ -83,13 +83,13 @@ public class PublisherControllerTest {
 
         // Create a new instance of the Publisher class and set its properties
         Publisher inputPublisher = new Publisher();
-        inputPublisher.setName("Name");
-        inputPublisher.setStreet("street");
-        inputPublisher.setCity("City");
-        inputPublisher.setState("State");
-        inputPublisher.setPostalCode("00000");
-        inputPublisher.setPhone("000-000-0000");
-        inputPublisher.setEmail("email@email.com");
+        inputPublisher.setName("Penguin Random House");
+        inputPublisher.setStreet("1745 Broadway");
+        inputPublisher.setCity("New York City");
+        inputPublisher.setState("New York");
+        inputPublisher.setPostalCode("10019");
+        inputPublisher.setPhone("800-793-2665");
+        inputPublisher.setEmail("penguinrandomhouse@gmail.com");
 
         // Serialize the Publisher object to JSON format
         String inputJson = mapper.writeValueAsString(inputPublisher);
@@ -122,13 +122,13 @@ public class PublisherControllerTest {
     public void shouldReturnPublisherById() throws Exception {
         // Create a new instance of the Publisher class and set its properties
         Publisher inputPublisher = new Publisher();
-        inputPublisher.setName("Name");
-        inputPublisher.setStreet("street");
-        inputPublisher.setCity("City");
-        inputPublisher.setState("State");
-        inputPublisher.setPostalCode("00000");
-        inputPublisher.setPhone("000-000-0000");
-        inputPublisher.setEmail("email@email.com");
+        inputPublisher.setName("Penguin Random House");
+        inputPublisher.setStreet("1745 Broadway");
+        inputPublisher.setCity("New York City");
+        inputPublisher.setState("New York");
+        inputPublisher.setPostalCode("10019");
+        inputPublisher.setPhone("800-793-2665");
+        inputPublisher.setEmail("penguinrandomhouse@gmail.com");
         inputPublisher.setId(2);
 
         // Convert the Publisher object to a JSON string

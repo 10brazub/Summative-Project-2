@@ -23,6 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AuthorControllerTest {
     @Autowired
     private MockMvc mockMvc;
+
     @MockBean
     AuthorRepository authorRepository;
 
@@ -41,14 +42,14 @@ public class AuthorControllerTest {
     @Test
     public void testReadAuthorById() throws Exception {
         Author author = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("000-000-0000");
-        author.setFirstName("Name");
-        author.setLastName("Last");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         author.setAuthorId(2);
 
         // Convert the Author object to JSON
@@ -69,14 +70,14 @@ public class AuthorControllerTest {
 
         // Create a sample Author object to add to the repository
         Author author = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("000-000-0000");
-        author.setFirstName("Name");
-        author.setLastName("Last");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         author.setAuthorId(2);
 
         // Convert the Author object to JSON
@@ -98,14 +99,14 @@ public class AuthorControllerTest {
 
         // Create a sample Author object to update in the repository
         Author author = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("000-000-0000");
-        author.setFirstName("Name");
-        author.setLastName("Last");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         author.setAuthorId(2);
 
         // Convert the Author object to JSON

@@ -27,14 +27,14 @@ public class AuthorRepositoryTest {
     public void testCreateAuthor() {
 
         Author author = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("111-222-3333");
-        author.setFirstName("firstname");
-        author.setLastName("lastname");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         author = authorRepository.save(author);
 
         Optional<Author> author1 = authorRepository.findById(author.getAuthorId());
@@ -45,25 +45,25 @@ public class AuthorRepositoryTest {
     @Test
     public void testReadAllAuthor() {
         Author author = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("111-222-3333");
-        author.setFirstName("firstname");
-        author.setLastName("lastname");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         authorRepository.save(author);
 
         Author author1 = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("111-222-3333");
-        author.setFirstName("firstname");
-        author.setLastName("lastname");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("fHerbert@gmail.com");
+        author.setPhone("832-401-4923");
+        author.setFirstName("Frank");
+        author.setLastName("Herbert");
+        author.setStreet("9402 Sunny Dr");
+        author.setPostalCode("98406");
+        author.setState("Tacoma");
+        author.setCity("Washington");
         authorRepository.save(author1);
 
         List<Author> authors = authorRepository.findAll();
@@ -75,20 +75,20 @@ public class AuthorRepositoryTest {
     public void testUpdateAuthor() {
 
         Author author = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("111-222-3333");
-        author.setFirstName("firstname");
-        author.setLastName("lastname");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         author = authorRepository.save(author);
 
-        author.setCity("NewCity");
-        author.setState("Nc");
-        author.setPostalCode("00000");
-        author.setStreet("New Street");
+        author.setCity("Santa Ana");
+        author.setState("California");
+        author.setPostalCode("92705");
+        author.setStreet("19001 Beverly Ave");
         author = authorRepository.save(author);
 
         Optional<Author> author1 = authorRepository.findById(author.getAuthorId());
@@ -98,14 +98,14 @@ public class AuthorRepositoryTest {
     public void testDeleteAuthor() {
 
         Author author = new Author();
-        author.setEmail("email@email.com");
-        author.setPhone("111-222-3333");
-        author.setFirstName("firstname");
-        author.setLastName("lastname");
-        author.setStreet("Street");
-        author.setPostalCode("99999");
-        author.setState("St");
-        author.setCity("City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         authorRepository.save(author);
 
 
@@ -119,14 +119,14 @@ public class AuthorRepositoryTest {
     public void testReadAuthorById() {
 
         Author author = new Author();
-        author.setEmail("test@email.com");
-        author.setPhone("111-222-3333");
-        author.setFirstName("Test");
-        author.setLastName("Author");
-        author.setStreet("123 Main St");
-        author.setPostalCode("12345");
-        author.setState("CA");
-        author.setCity("Test City");
+        author.setEmail("pkd@gmail.com");
+        author.setPhone("849-242-1412");
+        author.setFirstName("Philip");
+        author.setLastName("Dick");
+        author.setStreet("1312 Hopkins Ave");
+        author.setPostalCode("60601");
+        author.setState("Illinois");
+        author.setCity("Chicago");
         authorRepository.save(author);
 
         Optional<Author> optionalAuthor = authorRepository.findById(author.getAuthorId());
