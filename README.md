@@ -6,6 +6,8 @@
 
 In this project, you will work together with a team to build a REST API to manage inventory for a bookstore. You will also provide support for querying with GraphQL. In addition, you will produce a 1–3 minute video summary of the project. The requirements and features are detailed below.
 
+## Video Presentation
+
 ## User Stories
 
 Your service must implement the following user stories:
