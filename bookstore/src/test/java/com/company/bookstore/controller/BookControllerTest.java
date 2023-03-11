@@ -109,11 +109,12 @@ public class BookControllerTest {
         book.setPublishDate("03-23-2013");
         book.setTitle("The Messenger");
         book.setPrice("12.44");
+        book.setBookId(2);
 
         String inputJson = objectMapper.writeValueAsString(book);
 
         mockMvc.perform(
-                        delete("/book")
+                        delete("/book/2")
                                 .content(inputJson)
                                 .contentType(MediaType.APPLICATION_JSON)
                 )
