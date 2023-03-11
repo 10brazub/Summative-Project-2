@@ -1,6 +1,6 @@
 ![Netflix](https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white)
 
-# Summarative Project 2
+# Summative Project 2
 
 ### This project was worked on by Brandon Zubia and Robert Velasquez
 
